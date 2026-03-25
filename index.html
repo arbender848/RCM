@@ -92,6 +92,8 @@
     .code-badge.rarc { background:#f0faf5; color:#1a5c3a; border-color:#a8d9be; }
     .code-badge.payer { background:#f3eeff; color:#4a2d8a; border-color:#c9b0f0; }
     .code-badge.payer::before { content:'★ '; font-size:8px; opacity:0.7; }
+    .code-badge.anthem { background:#fff0f0; color:#8a1a1a; border-color:#f0b0b0; }
+    .code-badge.anthem::before { content:'★ '; font-size:8px; opacity:0.7; }
 
     .toggle-icon { width:26px; height:26px; border-radius:50%; border:1px solid var(--border-strong); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.15s; background:var(--surface2); }
     .toggle-icon svg { width:12px; height:12px; color:var(--text-muted); transition:transform 0.2s; }
@@ -130,6 +132,51 @@
     .empty-icon { font-size:36px; margin-bottom:12px; }
     .empty h3 { font-size:16px; font-weight:500; color:var(--text); margin-bottom:6px; }
     .empty p { font-size:13px; }
+
+    /* Resources tab */
+    .res-section-title { font-size:13px; font-weight:600; color:var(--text); margin-bottom:14px; letter-spacing:-0.2px; }
+    .res-source-note { font-size:12px; color:var(--text-muted); line-height:1.6; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:18px; }
+    .res-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px; margin-bottom:8px; }
+    .res-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; display:grid; grid-template-columns:40px 1fr; grid-template-rows:1fr auto; gap:0 14px; transition:border-color 0.15s,box-shadow 0.15s; }
+    .res-card:hover { border-color:var(--accent); box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+    .res-card-icon { grid-row:1/3; width:40px; height:40px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .res-card-icon svg { width:20px; height:20px; }
+    .res-icon-blue { background:#e6f1fb; color:#185FA5; }
+    .res-icon-green { background:#eaf3de; color:#3B6D11; }
+    .res-icon-amber { background:#faeeda; color:#854F0B; }
+    .res-icon-teal { background:#e1f5ee; color:#0F6E56; }
+    .res-icon-purple { background:#eeedfe; color:#534AB7; }
+    .res-icon-coral { background:#faece7; color:#993C1D; }
+    .res-icon-red { background:#fcebeb; color:#A32D2D; }
+    .res-card-body { grid-column:2; }
+    .res-card-cat { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.7px; color:var(--text-faint); margin-bottom:4px; }
+    .res-card-title { font-size:13px; font-weight:600; color:var(--text); margin-bottom:5px; line-height:1.4; }
+    .res-card-desc { font-size:12px; color:var(--text-muted); line-height:1.55; margin-bottom:8px; }
+    .res-card-tags { display:flex; flex-wrap:wrap; gap:4px; }
+    .res-tag { font-size:10px; padding:2px 7px; border-radius:4px; background:var(--surface2); color:var(--text-muted); border:1px solid var(--border); }
+    .res-link-btn { grid-column:2; align-self:end; display:inline-flex; align-items:center; font-family:inherit; font-size:12px; font-weight:500; color:var(--accent); text-decoration:none; margin-top:10px; padding:6px 12px; border:1px solid var(--accent); border-radius:var(--radius-sm); width:fit-content; transition:background 0.15s,color 0.15s; }
+    .res-link-btn:hover { background:var(--accent); color:#fff; }
+    /* Locality table */
+    .loc-controls { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+    .loc-filter-group { display:flex; gap:6px; flex-wrap:wrap; }
+    .loc-table-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+    .loc-table { width:100%; border-collapse:collapse; font-size:12px; }
+    .loc-table thead { background:var(--surface2); position:sticky; top:0; }
+    .loc-table th { padding:9px 14px; text-align:left; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-faint); border-bottom:1px solid var(--border); white-space:nowrap; }
+    .loc-table td { padding:8px 14px; border-bottom:1px solid var(--border); color:var(--text); vertical-align:middle; }
+    .loc-table tr:last-child td { border-bottom:none; }
+    .loc-table tr:hover td { background:var(--surface2); }
+    .loc-badge { display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:4px; }
+    .loc-badge.urban { background:#e6f1fb; color:#185FA5; border:1px solid #b8d0f5; }
+    .loc-badge.rural { background:#eaf3de; color:#3B6D11; border:1px solid #c0dd97; }
+    .loc-badge.micro { background:#f0faf5; color:#0F6E56; border:1px solid #a8d9be; }
+    .loc-badge.ceac { background:#faeeda; color:#854F0B; border:1px solid #f0c875; }
+    .loc-rate-urban { font-weight:600; color:#185FA5; }
+    .loc-rate-rural { font-weight:600; color:#3B6D11; }
+    /* Resource links on template cards */
+    .card-resources { display:flex; flex-wrap:wrap; gap:5px; margin-top:6px; }
+    .card-res-link { font-size:10px; color:var(--accent); text-decoration:none; padding:2px 7px; border:1px solid var(--accent); border-radius:4px; opacity:0.8; transition:opacity 0.15s,background 0.15s,color 0.15s; }
+    .card-res-link:hover { opacity:1; background:var(--accent); color:#fff; }
   </style>
 </head>
 <body>
@@ -159,6 +206,7 @@
   <nav class="tab-bar">
     <button class="tab-btn active" id="tab-denial" onclick="switchTab('denial')">Denial Response Library</button>
     <button class="tab-btn" id="tab-tasked" onclick="switchTab('tasked')">Commonly Tasked</button>
+    <button class="tab-btn" id="tab-resources" onclick="switchTab('resources')">Resources &amp; References</button>
   </nav>
 
   <div class="color-panel" id="colorPanel">
@@ -177,6 +225,140 @@
       <div class="filter-row" id="filters-tasked"></div>
       <div class="grid" id="grid-tasked"></div>
     </div>
+    <div class="tab-pane" id="pane-resources">
+
+      <!-- Quick links section -->
+      <div class="res-section-title">Quick Links</div>
+      <div class="res-grid">
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-blue">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Provider Verification</div>
+            <div class="res-card-title">DBHDS Licensed Provider Search</div>
+            <div class="res-card-desc">Look up Virginia DBHDS-licensed behavioral health providers. Use to verify licensure effective dates when appealing provider credentialing denials.</div>
+            <div class="res-card-tags"><span class="res-tag">Credentialing</span><span class="res-tag">Provider Licensing</span><span class="res-tag">DBHDS</span></div>
+          </div>
+          <a href="https://vadbhdsv7prod.glsuite.us/GLSuiteWeb/Clients/vadbhds/Public/ProviderSearch/ProviderSearchSearch.aspx" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-green">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10h6M7 7h6M7 13h4"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Fee Schedule</div>
+            <div class="res-card-title">Virginia Medicaid Fee Schedules (DMAS)</div>
+            <div class="res-card-desc">Current DMAS fee schedules for all covered services. Reference when appealing rate discrepancies, urban/rural locality errors, or underpayments.</div>
+            <div class="res-card-tags"><span class="res-tag">Rate / Locality</span><span class="res-tag">DMAS</span><span class="res-tag">Fee Schedule</span></div>
+          </div>
+          <a href="https://www.dmas.virginia.gov/for-providers/fee-schedules/" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-amber">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L3 8v9h5v-5h4v5h5V8z"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Code Reference</div>
+            <div class="res-card-title">X12 Claim Adjustment Reason Codes (CARC)</div>
+            <div class="res-card-desc">Official X12 CARC list maintained by the Washington Publishing Company. Use to look up any denial reason code appearing on an 835 remittance.</div>
+            <div class="res-card-tags"><span class="res-tag">CARC</span><span class="res-tag">X12</span><span class="res-tag">Denial Codes</span></div>
+          </div>
+          <a href="https://x12.org/codes/claim-adjustment-reason-codes" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-teal">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L3 8v9h5v-5h4v5h5V8z"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Code Reference</div>
+            <div class="res-card-title">X12 Remittance Advice Remark Codes (RARC)</div>
+            <div class="res-card-desc">Official X12 RARC list maintained by CMS. Use to look up supplemental remark codes (e.g. N294, N210, M143) that accompany a CARC on remittance.</div>
+            <div class="res-card-tags"><span class="res-tag">RARC</span><span class="res-tag">X12</span><span class="res-tag">Denial Codes</span></div>
+          </div>
+          <a href="https://x12.org/codes/remittance-advice-remark-codes" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-purple">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="14" height="14" rx="2"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Mental Health Parity</div>
+            <div class="res-card-title">CMS Mental Health Parity &amp; Addiction Equity Act (MHPAEA)</div>
+            <div class="res-card-desc">CMS guidance on MHPAEA. Reference when appealing prior authorization denials for outpatient psychotherapy or SUD services where parity exemptions apply.</div>
+            <div class="res-card-tags"><span class="res-tag">Parity Law</span><span class="res-tag">Auth Not Required</span><span class="res-tag">Behavioral Health</span></div>
+          </div>
+          <a href="https://www.cms.gov/marketplace/private-health-insurance/mental-health-parity" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-coral">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Payer Portal</div>
+            <div class="res-card-title">Sentara Health Plans Provider Portal</div>
+            <div class="res-card-desc">Sentara provider portal for claim status, authorization lookup, and remittance review. Use when working N189, D07, CO-109/Kaiser, or other Sentara-specific denials.</div>
+            <div class="res-card-tags"><span class="res-tag">Sentara</span><span class="res-tag">N189</span><span class="res-tag">D07</span><span class="res-tag">CO-109</span></div>
+          </div>
+          <a href="https://www.sentarahealthplans.com/providers" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+        <div class="res-card">
+          <div class="res-card-icon res-icon-red">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg>
+          </div>
+          <div class="res-card-body">
+            <div class="res-card-cat">Payer Portal</div>
+            <div class="res-card-title">Anthem HealthKeepers Plus Provider Portal</div>
+            <div class="res-card-desc">Anthem provider portal for Virginia Medicaid (HealthKeepers Plus). Use when working Y3Z, auth denials, or credentialing issues specific to Anthem.</div>
+            <div class="res-card-tags"><span class="res-tag">Anthem</span><span class="res-tag">Y3Z</span><span class="res-tag">HealthKeepers Plus</span></div>
+          </div>
+          <a href="https://www.anthem.com/provider/va/" target="_blank" class="res-link-btn">Open &#8599;</a>
+        </div>
+
+      </div>
+
+      <!-- Locality table section -->
+      <div class="res-section-title" style="margin-top:36px;">DMAS Rural &amp; Urban Locality Reference</div>
+      <div class="res-source-note">Source: CMS CY2017 MA HSD Reference File via DMAS MLTSS Localities Listing. Rural = Micro, Rural, and CEAC designations. Urban = Metro and Large Metro designations. Used to determine correct fee schedule rate (urban vs. rural) when appealing locality-related underpayments.</div>
+
+      <div class="loc-controls">
+        <div class="search-wrap" style="flex:1;max-width:320px;">
+          <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+          <input type="text" id="loc-search" placeholder="Search locality…" oninput="filterLocalities()" style="width:100%;">
+        </div>
+        <div class="loc-filter-group">
+          <button class="chip active" id="loc-all" onclick="setLocFilter('all')">All (133)</button>
+          <button class="chip" id="loc-urban" onclick="setLocFilter('urban')">Urban</button>
+          <button class="chip" id="loc-rural" onclick="setLocFilter('rural')">Rural</button>
+        </div>
+      </div>
+
+      <div class="loc-table-wrap">
+        <table class="loc-table" id="loc-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Locality</th>
+              <th>FIPS</th>
+              <th>SSA Code</th>
+              <th>Designation</th>
+              <th>Rate Type</th>
+            </tr>
+          </thead>
+          <tbody id="loc-tbody"></tbody>
+        </table>
+        <div id="loc-empty" style="display:none;text-align:center;padding:32px;color:var(--text-muted);font-size:13px;">No localities match your search.</div>
+      </div>
+      <div id="loc-count" style="margin-top:10px;font-size:12px;color:var(--text-faint);"></div>
+
+    </div>
   </main>
 </div>
 
@@ -189,6 +371,7 @@ const DENIAL_TEMPLATES=[
     id:'d1',category:'Rate / Locality Error',
     title:'Urban vs. rural rate underpayment',
     keywords:['rate','urban','rural','locality','underpaid','fee schedule','H0046','DMAS','CMS'],
+    resources:[{label:'DMAS Fee Schedules',tab:'resources'},{label:'Locality Reference',tab:'resources'}],
     codes:[
       {code:'CO-45',type:'carc',desc:'Charge exceeds fee schedule / max allowable — used here in reverse when payer applied wrong (lower) schedule'},
       {code:'N14',type:'rarc',desc:'Payment based on a contractual amount, fee schedule, or maximum allowable'},
@@ -269,16 +452,19 @@ This authorization was approved for [APPROVED UNITS] units, which have not been 
   },
   {
     id:'d6',category:'Authorization Not Required',
-    title:'In-network provider — prior auth not required',
-    keywords:['197','in network','outpatient','psychotherapy','prior authorization','not required','Y3Z','exempt'],
+    title:'In-network provider — prior auth not required (mental health parity / credentialing)',
+    keywords:['197','in network','outpatient','psychotherapy','prior authorization','not required','Y3Z','exempt','mental health parity','credentialing','parity law'],
+    resources:[{label:'CMS MHPAEA Reference',tab:'resources'}],
     codes:[
-      {code:'CO-197',type:'carc',desc:'Precertification/authorization absent — disputed: in-network providers exempt'},
-      {code:'CO-96',type:'carc',desc:'Non-covered charge — may appear if payer flags as non-covered pending auth'},
+      {code:'CO-197',type:'carc',desc:'Precertification/authorization absent — disputed: in-network providers exempt under mental health parity. Applies broadly across payers.'},
+      {code:'Y3Z',type:'anthem',desc:'Anthem-specific remark code paired with 197 — flags auth absent; for outpatient psychotherapy this is typically a credentialing issue, not a true auth requirement'},
+      {code:'CO-96',type:'carc',desc:'Non-covered charge — may appear if payer flags as non-covered pending auth or credentialing resolution'},
       {code:'N210',type:'rarc',desc:'Alert: You may appeal this decision'},
     ],
+    note:'When a 197 denial appears on an outpatient psychotherapy claim — whether paired with Y3Z (Anthem) or another payer's remark code — the root cause is almost always a credentialing issue rather than a missing authorization. Outpatient psychotherapy does not require prior authorization for in-network providers under mental health parity laws. Confirm the provider's in-network effective date before submitting, and request a bulk audit of all similarly denied claims from that date forward.',
     template:`This claim was denied due to remark code [REMARK CODE] — no authorization on file. [SERVICE TYPE] services do not require prior authorization when the practitioner is in network with this plan.
 
-This provider has been in network effective [EFFECTIVE DATE]. Please reprocess this claim for payment, and audit all other claims affiliated with this provider that denied for a similar reason from [EFFECTIVE DATE] forward, accordingly.`,
+This provider is in network effective [EFFECTIVE DATE]. Please reprocess this claim for payment, and all other claims affiliated with this provider that have denied for a similar reason, accordingly. Please audit claims from [EFFECTIVE DATE] forward.`,
     placeholders:['[REMARK CODE]','[SERVICE TYPE]','[EFFECTIVE DATE]']
   },
   {
@@ -320,6 +506,7 @@ We request review of this edit and reprocessing of the claim(s) accordingly. Ple
     id:'d9',category:'Provider Licensing',
     title:'Reprocess all claims per provider licensure effective date',
     keywords:['licensing','provider','license','effective date','reprocess','all claims','proof of license','credentialing'],
+    resources:[{label:'DBHDS Provider Search',tab:'resources'}],
     codes:[
       {code:'CO-170',type:'carc',desc:'Payment denied — service performed/billed by this type of provider (credentialing/enrollment issue)'},
       {code:'N95',type:'rarc',desc:'This provider type/specialty may not bill this service'},
@@ -331,6 +518,21 @@ We request review of this edit and reprocessing of the claim(s) accordingly. Ple
 
 We request that all claims on file for this provider be reviewed and reprocessed in light of the confirmed licensure. Please process all applicable claims accordingly.`,
     placeholders:['[LICENSE DATE]']
+  },
+  {
+    id:'d10',category:'Payer / Eligibility Mismatch',
+    title:'CO-109 — claim not covered by Sentara; member enrolled with Kaiser',
+    keywords:['CO-109','not covered','Kaiser','Kaiser Permanente','Sentara','partnership','wrong payer','eligibility','enrollment'],
+    codes:[
+      {code:'CO-109',type:'carc',desc:'Claim/service not covered by this payer — member coverage is administered by a separate entity'},
+      {code:'CO-109',type:'payer',desc:'Sentara-specific: member is enrolled under the Sentara/Kaiser Permanente partnership; all claims must go to Kaiser Permanente directly'},
+    ],
+    template:`This claim was denied by Sentara with denial code CO-109 — claim/service not covered by this payer.
+
+This denial typically indicates that the member is enrolled with Kaiser Permanente through their partnership with Sentara. Under this arrangement, Kaiser Permanente administers all claims and benefits separately and according to their own policies and practices.
+
+Please verify the member's plan enrollment and resubmit this claim directly to Kaiser Permanente using the member's Kaiser Permanente ID and applicable billing information. Sentara will not adjudicate claims for members covered under the Kaiser partnership plan.`,
+    placeholders:[]
   },
 ];
 
@@ -485,6 +687,7 @@ Please confirm and advise so we may process accordingly.`,
     id:'t12',category:'Diagnosis / Clinical Correction',
     title:'SUD service — primary diagnosis must be SUD-related',
     keywords:['SUD','substance use','primary diagnosis','diagnosis code','reprocessing','update','CO-11','inconsistent'],
+    resources:[{label:'CARC/RARC Reference',tab:'resources'}],
     codes:[
       {code:'CO-11',type:'carc',desc:'Diagnosis is inconsistent with the procedure — primary dx must be SUD-related for SUD services'},
       {code:'CO-4',type:'carc',desc:'Procedure code inconsistent with modifier — may appear if SUD modifier missing'},
@@ -538,7 +741,15 @@ function switchTab(tab){
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.getElementById('pane-'+tab).classList.add('active');
   document.getElementById('search').value='';
-  render();
+  if(tab==='resources'){
+    document.getElementById('search').style.opacity='0.4';
+    document.getElementById('search').disabled=true;
+    renderLocalities();
+  } else {
+    document.getElementById('search').style.opacity='1';
+    document.getElementById('search').disabled=false;
+    render();
+  }
 }
 
 function setAccent(hex){
@@ -648,10 +859,14 @@ function renderTab(tab){
             <div class="template-text">${t.template}</div>
           </div>
           <div>
+            ${t.note?`<div class="sidebar-section">
+              <div class="sidebar-label">&#9432; Clinical note</div>
+              <div style="font-size:12px;line-height:1.6;color:var(--text-muted);background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;">${t.note}</div>
+            </div>`:''}
             ${t.codes&&t.codes.length?`<div class="sidebar-section">
               <div class="sidebar-label">Associated denial codes</div>
               ${codesHTML(t.codes,true)}
-              ${t.codes.some(c=>c.type==='payer')?'<div style="margin-top:8px;font-size:11px;color:var(--text-faint);">&#9733; Payer-specific code (Sentara)</div>':''}
+              ${t.codes.some(c=>c.type==='payer'||c.type==='anthem')?`<div style="margin-top:8px;font-size:11px;color:var(--text-faint);">${[t.codes.some(c=>c.type==='payer')?'&#9733; Payer-specific code (Sentara)':'',t.codes.some(c=>c.type==='anthem')?'&#9733; Payer-specific code (Anthem)':''].filter(Boolean).join(' &nbsp;·&nbsp; ')}</div>`:''}
             </div>`:''}
             ${t.placeholders.length?`<div class="sidebar-section">
               <div class="sidebar-label">Placeholders to fill in</div>
@@ -661,12 +876,197 @@ function renderTab(tab){
               <div class="sidebar-label">Related keywords</div>
               <div class="keywords-list">${t.keywords.map(k=>`<span class="kw-tag">${k}</span>`).join('')}</div>
             </div>
+            ${t.resources&&t.resources.length?`<div class="sidebar-section">
+              <div class="sidebar-label">&#128279; Supporting resources</div>
+              <div class="card-resources">${t.resources.map(r=>`<a href="#" class="card-res-link" onclick="event.preventDefault();switchTab('resources')">${r.label} &#8599;</a>`).join('')}</div>
+            </div>`:''}
             <button class="copy-btn" id="copy-${t.id}" onclick="copyText('${t.id}')">${copyIconHTML()}</button>
           </div>
         </div>
       </div>`:''}
     </div>`;
   }).join('');
+}
+
+
+// ── Locality data ──
+const LOCALITIES=[
+  {n:1,name:"Accomack",fips:"001",ssa:"49000",desig:"Micro",rate:"rural"},
+  {n:2,name:"Alleghany",fips:"005",ssa:"49020",desig:"Rural",rate:"rural"},
+  {n:3,name:"Amelia",fips:"007",ssa:"49030",desig:"Rural",rate:"rural"},
+  {n:4,name:"Amherst",fips:"009",ssa:"49040",desig:"Micro",rate:"rural"},
+  {n:5,name:"Appomattox",fips:"011",ssa:"49050",desig:"Rural",rate:"rural"},
+  {n:6,name:"Augusta",fips:"015",ssa:"49070",desig:"Micro",rate:"rural"},
+  {n:7,name:"Bath",fips:"017",ssa:"49080",desig:"CEAC",rate:"rural"},
+  {n:8,name:"Bland",fips:"021",ssa:"49100",desig:"Rural",rate:"rural"},
+  {n:9,name:"Botetourt",fips:"023",ssa:"49110",desig:"Micro",rate:"rural"},
+  {n:10,name:"Brunswick",fips:"025",ssa:"49120",desig:"Rural",rate:"rural"},
+  {n:11,name:"Buchanan",fips:"027",ssa:"49130",desig:"Rural",rate:"rural"},
+  {n:12,name:"Buckingham",fips:"029",ssa:"49140",desig:"Rural",rate:"rural"},
+  {n:13,name:"Buena Vista City",fips:"530",ssa:"49141",desig:"Rural",rate:"rural"},
+  {n:14,name:"Caroline",fips:"033",ssa:"49160",desig:"Micro",rate:"rural"},
+  {n:15,name:"Carroll",fips:"035",ssa:"49170",desig:"Micro",rate:"rural"},
+  {n:16,name:"Charles City",fips:"036",ssa:"49180",desig:"Rural",rate:"rural"},
+  {n:17,name:"Charlotte",fips:"037",ssa:"49190",desig:"Rural",rate:"rural"},
+  {n:18,name:"Clarke",fips:"043",ssa:"49210",desig:"Micro",rate:"rural"},
+  {n:19,name:"Covington City",fips:"580",ssa:"49213",desig:"Rural",rate:"rural"},
+  {n:20,name:"Craig",fips:"045",ssa:"49220",desig:"Rural",rate:"rural"},
+  {n:21,name:"Culpeper",fips:"047",ssa:"49230",desig:"Micro",rate:"rural"},
+  {n:22,name:"Cumberland",fips:"049",ssa:"49240",desig:"Rural",rate:"rural"},
+  {n:23,name:"Danville City",fips:"590",ssa:"49241",desig:"Micro",rate:"rural"},
+  {n:24,name:"Dickenson",fips:"051",ssa:"49250",desig:"Rural",rate:"rural"},
+  {n:25,name:"Dinwiddie",fips:"053",ssa:"49260",desig:"Micro",rate:"rural"},
+  {n:26,name:"Emporia City",fips:"595",ssa:"49270",desig:"Rural",rate:"rural"},
+  {n:27,name:"Essex",fips:"057",ssa:"49280",desig:"Rural",rate:"rural"},
+  {n:28,name:"Floyd",fips:"063",ssa:"49310",desig:"Rural",rate:"rural"},
+  {n:29,name:"Fluvanna",fips:"065",ssa:"49320",desig:"Micro",rate:"rural"},
+  {n:30,name:"Franklin City",fips:"620",ssa:"49328",desig:"Rural",rate:"rural"},
+  {n:31,name:"Franklin",fips:"067",ssa:"49330",desig:"Micro",rate:"rural"},
+  {n:32,name:"Galax City",fips:"640",ssa:"49343",desig:"Rural",rate:"rural"},
+  {n:33,name:"Giles",fips:"071",ssa:"49350",desig:"Rural",rate:"rural"},
+  {n:34,name:"Gloucester",fips:"073",ssa:"49360",desig:"Micro",rate:"rural"},
+  {n:35,name:"Goochland",fips:"075",ssa:"49370",desig:"Micro",rate:"rural"},
+  {n:36,name:"Grayson",fips:"077",ssa:"49380",desig:"Rural",rate:"rural"},
+  {n:37,name:"Greene",fips:"079",ssa:"49390",desig:"Micro",rate:"rural"},
+  {n:38,name:"Greensville",fips:"081",ssa:"49400",desig:"Rural",rate:"rural"},
+  {n:39,name:"Halifax",fips:"083",ssa:"49410",desig:"Rural",rate:"rural"},
+  {n:40,name:"Highland",fips:"091",ssa:"49450",desig:"CEAC",rate:"rural"},
+  {n:41,name:"Isle of Wight",fips:"093",ssa:"49460",desig:"Micro",rate:"rural"},
+  {n:42,name:"King and Queen",fips:"097",ssa:"49480",desig:"Rural",rate:"rural"},
+  {n:43,name:"King George",fips:"099",ssa:"49490",desig:"Micro",rate:"rural"},
+  {n:44,name:"King William",fips:"101",ssa:"49500",desig:"Micro",rate:"rural"},
+  {n:45,name:"Lancaster",fips:"103",ssa:"49510",desig:"Micro",rate:"rural"},
+  {n:46,name:"Lee",fips:"105",ssa:"49520",desig:"Micro",rate:"rural"},
+  {n:47,name:"Lexington City",fips:"678",ssa:"49522",desig:"Rural",rate:"rural"},
+  {n:48,name:"Louisa",fips:"109",ssa:"49540",desig:"Micro",rate:"rural"},
+  {n:49,name:"Lunenburg",fips:"111",ssa:"49550",desig:"Rural",rate:"rural"},
+  {n:50,name:"Madison",fips:"113",ssa:"49560",desig:"Rural",rate:"rural"},
+  {n:51,name:"Mathews",fips:"115",ssa:"49570",desig:"Rural",rate:"rural"},
+  {n:52,name:"Mecklenburg",fips:"117",ssa:"49580",desig:"Rural",rate:"rural"},
+  {n:53,name:"Middlesex",fips:"119",ssa:"49590",desig:"Micro",rate:"rural"},
+  {n:54,name:"Nelson",fips:"125",ssa:"49620",desig:"Rural",rate:"rural"},
+  {n:55,name:"New Kent",fips:"127",ssa:"49621",desig:"Micro",rate:"rural"},
+  {n:56,name:"Northampton",fips:"131",ssa:"49650",desig:"Micro",rate:"rural"},
+  {n:57,name:"Northumberland",fips:"133",ssa:"49660",desig:"Micro",rate:"rural"},
+  {n:58,name:"Norton City",fips:"720",ssa:"49661",desig:"Micro",rate:"rural"},
+  {n:59,name:"Nottoway",fips:"135",ssa:"49670",desig:"Rural",rate:"rural"},
+  {n:60,name:"Orange",fips:"137",ssa:"49680",desig:"Micro",rate:"rural"},
+  {n:61,name:"Page",fips:"139",ssa:"49690",desig:"Micro",rate:"rural"},
+  {n:62,name:"Patrick",fips:"141",ssa:"49700",desig:"Rural",rate:"rural"},
+  {n:63,name:"Pittsylvania",fips:"143",ssa:"49710",desig:"Micro",rate:"rural"},
+  {n:64,name:"Poquoson City",fips:"735",ssa:"49712",desig:"Micro",rate:"rural"},
+  {n:65,name:"Powhatan",fips:"145",ssa:"49720",desig:"Micro",rate:"rural"},
+  {n:66,name:"Prince Edward",fips:"147",ssa:"49730",desig:"Micro",rate:"rural"},
+  {n:67,name:"Prince George",fips:"149",ssa:"49740",desig:"Micro",rate:"rural"},
+  {n:68,name:"Pulaski",fips:"155",ssa:"49770",desig:"Micro",rate:"rural"},
+  {n:69,name:"Rappahannock",fips:"157",ssa:"49780",desig:"Rural",rate:"rural"},
+  {n:70,name:"Richmond County",fips:"159",ssa:"49790",desig:"Rural",rate:"rural"},
+  {n:71,name:"Rockbridge",fips:"163",ssa:"49810",desig:"Rural",rate:"rural"},
+  {n:72,name:"Rockingham",fips:"165",ssa:"49820",desig:"Micro",rate:"rural"},
+  {n:73,name:"Russell",fips:"167",ssa:"49830",desig:"Micro",rate:"rural"},
+  {n:74,name:"Scott",fips:"169",ssa:"49840",desig:"Rural",rate:"rural"},
+  {n:75,name:"Shenandoah",fips:"171",ssa:"49850",desig:"Micro",rate:"rural"},
+  {n:76,name:"Smyth",fips:"173",ssa:"49860",desig:"Micro",rate:"rural"},
+  {n:77,name:"Southampton",fips:"175",ssa:"49870",desig:"Rural",rate:"rural"},
+  {n:78,name:"Surry",fips:"181",ssa:"49900",desig:"Rural",rate:"rural"},
+  {n:79,name:"Sussex",fips:"183",ssa:"49910",desig:"Rural",rate:"rural"},
+  {n:80,name:"Tazewell",fips:"185",ssa:"49920",desig:"Micro",rate:"rural"},
+  {n:81,name:"Warren",fips:"187",ssa:"49930",desig:"Micro",rate:"rural"},
+  {n:82,name:"Washington",fips:"191",ssa:"49950",desig:"Micro",rate:"rural"},
+  {n:83,name:"Westmoreland",fips:"193",ssa:"49960",desig:"Micro",rate:"rural"},
+  {n:84,name:"Wise",fips:"195",ssa:"49970",desig:"Micro",rate:"rural"},
+  {n:85,name:"Wythe",fips:"197",ssa:"49980",desig:"Micro",rate:"rural"},
+  {n:86,name:"Albemarle",fips:"003",ssa:"49010",desig:"Metro",rate:"urban"},
+  {n:87,name:"Alexandria City",fips:"510",ssa:"49011",desig:"Large Metro",rate:"urban"},
+  {n:88,name:"Arlington",fips:"013",ssa:"49060",desig:"Large Metro",rate:"urban"},
+  {n:89,name:"Bedford",fips:"019",ssa:"49090",desig:"Metro",rate:"urban"},
+  {n:90,name:"Bristol City",fips:"520",ssa:"49111",desig:"Metro",rate:"urban"},
+  {n:91,name:"Campbell",fips:"031",ssa:"49150",desig:"Metro",rate:"urban"},
+  {n:92,name:"Charlottesville City",fips:"540",ssa:"49191",desig:"Metro",rate:"urban"},
+  {n:93,name:"Chesapeake City",fips:"550",ssa:"49194",desig:"Metro",rate:"urban"},
+  {n:94,name:"Chesterfield",fips:"041",ssa:"49200",desig:"Metro",rate:"urban"},
+  {n:95,name:"Colonial Heights City",fips:"570",ssa:"49212",desig:"Metro",rate:"urban"},
+  {n:96,name:"Fairfax City",fips:"600",ssa:"49288",desig:"Large Metro",rate:"urban"},
+  {n:97,name:"Fairfax",fips:"059",ssa:"49290",desig:"Large Metro",rate:"urban"},
+  {n:98,name:"Falls Church City",fips:"610",ssa:"49291",desig:"Large Metro",rate:"urban"},
+  {n:99,name:"Fauquier",fips:"061",ssa:"49300",desig:"Metro",rate:"urban"},
+  {n:100,name:"Frederick",fips:"069",ssa:"49340",desig:"Metro",rate:"urban"},
+  {n:101,name:"Fredericksburg City",fips:"630",ssa:"49342",desig:"Metro",rate:"urban"},
+  {n:102,name:"Hampton City",fips:"650",ssa:"49411",desig:"Metro",rate:"urban"},
+  {n:103,name:"Hanover",fips:"085",ssa:"49420",desig:"Metro",rate:"urban"},
+  {n:104,name:"Harrisonburg City",fips:"660",ssa:"49421",desig:"Metro",rate:"urban"},
+  {n:105,name:"Henrico",fips:"087",ssa:"49430",desig:"Metro",rate:"urban"},
+  {n:106,name:"Henry",fips:"089",ssa:"49440",desig:"Metro",rate:"urban"},
+  {n:107,name:"Hopewell City",fips:"670",ssa:"49451",desig:"Metro",rate:"urban"},
+  {n:108,name:"James City",fips:"095",ssa:"49470",desig:"Metro",rate:"urban"},
+  {n:109,name:"Loudoun",fips:"107",ssa:"49530",desig:"Metro",rate:"urban"},
+  {n:110,name:"Lynchburg City",fips:"680",ssa:"49551",desig:"Metro",rate:"urban"},
+  {n:111,name:"Martinsville City",fips:"690",ssa:"49561",desig:"Metro",rate:"urban"},
+  {n:112,name:"Manassas City",fips:"683",ssa:"49563",desig:"Metro",rate:"urban"},
+  {n:113,name:"Manassas Park City",fips:"685",ssa:"49565",desig:"Large Metro",rate:"urban"},
+  {n:114,name:"Montgomery",fips:"121",ssa:"49600",desig:"Metro",rate:"urban"},
+  {n:115,name:"Newport News City",fips:"700",ssa:"49622",desig:"Metro",rate:"urban"},
+  {n:116,name:"Norfolk City",fips:"710",ssa:"49641",desig:"Metro",rate:"urban"},
+  {n:117,name:"Petersburg City",fips:"730",ssa:"49701",desig:"Metro",rate:"urban"},
+  {n:118,name:"Portsmouth City",fips:"740",ssa:"49711",desig:"Metro",rate:"urban"},
+  {n:119,name:"Prince William",fips:"153",ssa:"49750",desig:"Metro",rate:"urban"},
+  {n:120,name:"Radford City",fips:"750",ssa:"49771",desig:"Metro",rate:"urban"},
+  {n:121,name:"Richmond City",fips:"760",ssa:"49791",desig:"Metro",rate:"urban"},
+  {n:122,name:"Roanoke County",fips:"161",ssa:"49800",desig:"Metro",rate:"urban"},
+  {n:123,name:"Roanoke City",fips:"770",ssa:"49801",desig:"Metro",rate:"urban"},
+  {n:124,name:"Salem City",fips:"775",ssa:"49838",desig:"Metro",rate:"urban"},
+  {n:125,name:"Spotsylvania",fips:"177",ssa:"49880",desig:"Metro",rate:"urban"},
+  {n:126,name:"Stafford",fips:"179",ssa:"49890",desig:"Metro",rate:"urban"},
+  {n:127,name:"Staunton City",fips:"790",ssa:"49891",desig:"Metro",rate:"urban"},
+  {n:128,name:"Suffolk City",fips:"800",ssa:"49892",desig:"Metro",rate:"urban"},
+  {n:129,name:"Virginia Beach City",fips:"810",ssa:"49921",desig:"Metro",rate:"urban"},
+  {n:130,name:"Waynesboro City",fips:"820",ssa:"49951",desig:"Metro",rate:"urban"},
+  {n:131,name:"Williamsburg City",fips:"830",ssa:"49961",desig:"Metro",rate:"urban"},
+  {n:132,name:"Winchester City",fips:"840",ssa:"49962",desig:"Metro",rate:"urban"},
+  {n:133,name:"York",fips:"199",ssa:"49981",desig:"Metro",rate:"urban"},
+];
+
+let locFilter='all';
+
+function setLocFilter(f){
+  locFilter=f;
+  ['all','urban','rural'].forEach(x=>{
+    document.getElementById('loc-'+x).classList.toggle('active',x===f);
+  });
+  renderLocalities();
+}
+
+function filterLocalities(){ renderLocalities(); }
+
+function renderLocalities(){
+  const q=(document.getElementById('loc-search')||{value:''}).value.toLowerCase().trim();
+  const rows=LOCALITIES.filter(l=>{
+    const matchF=locFilter==='all'||l.rate===locFilter;
+    const matchQ=!q||l.name.toLowerCase().includes(q)||l.fips.includes(q)||l.ssa.includes(q)||l.desig.toLowerCase().includes(q);
+    return matchF&&matchQ;
+  });
+  const tbody=document.getElementById('loc-tbody');
+  const empty=document.getElementById('loc-empty');
+  const count=document.getElementById('loc-count');
+  if(!tbody)return;
+  if(!rows.length){
+    tbody.innerHTML='';
+    empty.style.display='block';
+    count.textContent='';
+    return;
+  }
+  empty.style.display='none';
+  const desigClass={Metro:'urban','Large Metro':'urban',Micro:'micro',Rural:'rural',CEAC:'ceac'};
+  tbody.innerHTML=rows.map(l=>`
+    <tr>
+      <td style="color:var(--text-faint);width:36px;">${l.n}</td>
+      <td style="font-weight:500;">${l.name}</td>
+      <td style="font-family:monospace;font-size:11px;">${l.fips}</td>
+      <td style="font-family:monospace;font-size:11px;">${l.ssa}</td>
+      <td><span class="loc-badge ${desigClass[l.desig]||'rural'}">${l.desig}</span></td>
+      <td class="loc-rate-${l.rate}">${l.rate.charAt(0).toUpperCase()+l.rate.slice(1)}</td>
+    </tr>`).join('');
+  count.textContent=`Showing ${rows.length} of 133 localities`;
 }
 
 function render(){renderTab('denial');renderTab('tasked');}
