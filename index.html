@@ -774,6 +774,7 @@ document.addEventListener('click',e=>{
 });
 
 function buildFilters(tab){
+  if(tab==='resources')return;
   const templates=tab==='denial'?DENIAL_TEMPLATES:TASKED_TEMPLATES;
   const cats=['All',...new Set(templates.map(t=>t.category))];
   document.getElementById('filters-'+tab).innerHTML=cats.map(c=>
@@ -784,6 +785,7 @@ function buildFilters(tab){
 function setFilter(tab,f){activeFilter[tab]=f;expandedId[tab]=null;buildFilters(tab);renderTab(tab);}
 
 function filtered(tab){
+  if(tab==='resources')return[];
   const templates=tab==='denial'?DENIAL_TEMPLATES:TASKED_TEMPLATES;
   const q=document.getElementById('search').value.toLowerCase().trim();
   return templates.filter(t=>{
@@ -834,6 +836,7 @@ function toggleExpand(tab,id){
 }
 
 function renderTab(tab){
+  if(tab==='resources')return;
   const items=filtered(tab);
   document.getElementById('countPill-'+tab).innerHTML=`<strong>${items.length}</strong> template${items.length!==1?'s':''}`;
   buildFilters(tab);
@@ -1071,6 +1074,8 @@ function renderLocalities(){
 
 function render(){renderTab('denial');renderTab('tasked');}
 buildSwatches();setAccent(selectedColor);render();
+// Pre-render locality table so it's ready when Resources tab is clicked
+setTimeout(renderLocalities, 100);
 </script>
 </body>
 </html>
